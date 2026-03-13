@@ -7,14 +7,35 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent("Portfolio contact from " + (name || "website visitor"));
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:maddurideepikareddy@gmail.com?subject=${subject}&body=${body}`;
+    setStatus("submitting");
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong sending your message. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -60,12 +81,23 @@ export default function ContactForm() {
           onChange={(e) => setMessage(e.target.value)}
         />
       </div>
-      <button
-        type="submit"
-        className="mt-2 inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-2.5 text-sm font-medium text-black shadow-lg shadow-amber-500/40 transition hover:bg-amber-300"
-      >
-        Send email
-      </button>
+      <div className="mt-2 flex flex-col gap-2">
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-2.5 text-sm font-medium text-black shadow-lg shadow-amber-500/40 transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {status === "submitting" ? "Sending..." : "Send email"}
+        </button>
+        {status === "success" && (
+          <p className="text-xs text-emerald-400">
+            Got it—your message has been sent.
+          </p>
+        )}
+        {status === "error" && error && (
+          <p className="text-xs text-red-400">{error}</p>
+        )}
+      </div>
     </motion.form>
   );
 }
