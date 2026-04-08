@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 const TERMINAL_LINES = [
   "deepika@nyc:~$ whoami",
-  "AI software engineer shipping agentic systems,",
-  "trading bots, and data-heavy products."
+  "AI software engineer — data pipelines, ML, production backends;",
+  "document AI, RAG, and agentic systems (pharma & fintech)."
 ];
 
 export default function Hero() {
@@ -93,10 +93,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="max-w-xl text-sm text-gray-300 sm:text-base"
         >
-          I&apos;m Deepika Reddy Madduri, an AI software engineer based in New
-          York City. I&apos;ve worked across fintech, academia, and document AI,
-          usually sitting where messy data, ML, and production constraints all
-          meet.
+          I&apos;m Deepika Reddy Madduri, an AI software engineer based in Jersey
+          City, NJ (NYC area). I have about three years building data pipelines,
+          ML models, and production backends in Python, SQL, and Java — lately
+          focused on document AI, RAG, and agentic systems for pharma supply
+          chain and fintech.
         </motion.p>
 
         <motion.div
@@ -122,11 +123,11 @@ export default function Hero() {
 
         <div className="flex flex-wrap gap-2 text-[11px] text-gray-400">
           {[
-            "AI / ML",
-            "Multi-agent systems",
-            "RAG pipelines",
-            "Production dashboards",
-            "Fintech & document AI"
+            "Python · SQL · Java",
+            "ETL & validation",
+            "RAG & LLMs",
+            "Flask · Spring Boot",
+            "Jenkins · CI/CD"
           ].map((pill) => (
             <span
               key={pill}
@@ -154,17 +155,17 @@ export default function Hero() {
                 Deepika · AI
               </span>
               <span className="font-mono text-[10px] text-amber-300">
-                NYC · UTC-5
+                Jersey City · UTC-5
               </span>
             </div>
             <div className="space-y-1 text-[11px] leading-snug">
               <p>
-                I build systems that argue with me in logs, then stay up making
-                sure they don&apos;t win.
+                Pipelines, ML models, and production backends — ETL, validation,
+                and APIs that hold up when the data doesn&apos;t.
               </p>
             </div>
             <div className="flex items-center justify-between text-[10px] text-amber-300/80">
-              <span className="font-mono">stack: Python · TypeScript · LLMs</span>
+              <span className="font-mono">stack: Python · SQL · Java · LLMs</span>
               <span className="font-mono">{`cat > ideas.txt`}</span>
             </div>
           </div>

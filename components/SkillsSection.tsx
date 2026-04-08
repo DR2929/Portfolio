@@ -9,57 +9,66 @@ type SkillGroup = {
 
 const groups: SkillGroup[] = [
   {
-    title: "Languages",
-    items: ["Java 8+", "Python", "JavaScript/TypeScript", "SQL", "HTML/CSS"]
+    title: "Programming",
+    items: ["Python", "Java", "SQL", "JavaScript/TypeScript"]
   },
   {
-    title: "Frontend",
-    items: ["React.js", "Next.js", "Tailwind CSS", "Figma"]
+    title: "ML & AI",
+    items: [
+      "Logistic Regression",
+      "XGBoost",
+      "BERT (Hugging Face)",
+      "ROC-AUC, F1, precision/recall",
+      "Threshold tuning",
+      "Feature engineering",
+      "SHAP",
+      "Drift (PSI)",
+      "RAG",
+      "LLM integration",
+      "NER",
+      "Intent classification"
+    ]
+  },
+  {
+    title: "Data",
+    items: [
+      "ETL",
+      "Validation",
+      "Schema evolution",
+      "Quality checks",
+      "Normalization",
+      "Backfill",
+      "Cohort analysis"
+    ]
   },
   {
     title: "Backend & APIs",
-    items: ["Spring Boot", "Flask", "FastAPI", "Node.js", "REST APIs", "WebSockets"]
+    items: ["Flask", "FastAPI", "Spring Boot", "REST", "Microservices"]
   },
   {
-    title: "Data & Databases",
+    title: "Data & AI (documents)",
     items: [
-      "PostgreSQL",
-      "MySQL",
-      "MongoDB",
-      "Firebase",
-      "Pandas",
-      "NumPy",
-      "Tableau",
-      "Power BI",
-      "Vector DBs"
+      "PyMuPDF",
+      "pdfplumber",
+      "Tesseract",
+      "PaddleOCR",
+      "EasyOCR",
+      "LlamaIndex",
+      "FAISS",
+      "Chroma"
     ]
   },
   {
-    title: "AI & ML",
-    items: [
-      "TensorFlow",
-      "PyTorch",
-      "scikit-learn",
-      "Hugging Face",
-      "OpenAI APIs",
-      "RAG pipelines",
-      "LLMs",
-      "NLP (spaCy, NLTK)"
-    ]
+    title: "Databases",
+    items: ["PostgreSQL", "SQLAlchemy", "Indexing", "Query optimization"]
   },
   {
-    title: "DevOps & Tooling",
-    items: [
-      "Docker",
-      "Jenkins",
-      "GitHub Actions",
-      "Maven/Gradle",
-      "Git",
-      "Postman",
-      "Kibana",
-      "Grafana",
-      "Gradio dashboards"
-    ]
+    title: "DevOps & quality",
+    items: ["Jenkins", "CI/CD", "JUnit", "Mockito", "JSON schema validation"]
+  },
+  {
+    title: "Frontend (as needed)",
+    items: ["React", "Next.js", "Tailwind", "Gradio"]
   }
 ];
 
@@ -99,4 +108,3 @@ export default function SkillsSection() {
     </motion.div>
   );
 }
-

@@ -24,8 +24,13 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="section-title">About</h2>
             <p className="max-w-2xl text-sm text-gray-300">
-            I&apos;m Deepika Reddy Madduri, an AI engineer in New York City who likes turning messy, real‑world data into systems that look calm from the outside—fraud‑detection dashboards, multi‑agent pipelines, and whatever else needs to quietly do the hard work in the background. 
-            I run on too much coffee and too many tabs, usually with a foreign drama in a language I&apos;m still learning playing somewhere off to the side. I build systems that argue with me in logs and then stay up making sure they don&apos;t win; I&apos;m not a movie person, but give me a long, complicated story—or a stubborn bug—and I&apos;ll happily lose the weekend to figuring it out.
+              AI software engineer with about three years building data pipelines,
+              ML models, and production backends in Python, SQL, and Java. Recent
+              focus on document AI, RAG, and agentic systems for pharma supply
+              chain and fintech. Strong background in ETL, validation, REST APIs,
+              NLP (including BERT / Hugging Face), and classical ML (logistic
+              regression, XGBoost), with experience improving data quality, model
+              performance, and reliability on moderate-scale datasets.
             </p>
           </RevealOnScroll>
         </section>
@@ -88,8 +93,8 @@ export default function HomePage() {
             Let&apos;s build something <em>real</em>
           </h2>
           <p className="mx-auto max-w-xl text-sm text-gray-300">
-            Open to AI/ML roles, quant research, and early-stage startups in New
-            York City.
+            Open to AI/ML and backend-heavy roles in the New York metro area
+            (Jersey City, NJ).
           </p>
           <ContactForm />
         </section>
