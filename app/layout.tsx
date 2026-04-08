@@ -17,7 +17,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Deepika Reddy Madduri | AI Software Engineer",
   description:
-    "AI software engineer in NYC with experience at Accenture, Montclair State University, and Pfizer, building multi-agent systems, trading agents, and data-heavy products."
+    "AI software engineer in Jersey City, NJ — data pipelines, ML, production backends; document AI, RAG, and agentic systems. Experience at Montclair State University, Accenture, and Infor; projects include Pfizer supply chain document AI externship."
 };
 
 export default function RootLayout({

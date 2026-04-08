@@ -1,43 +1,47 @@
- "use client";
+"use client";
 
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Autonomous Multi-Agent System for Real-Time Bargain Detection",
+    title: "Pfizer Supply Chain — Document Processing Extern",
     description:
-      "A 7-agent system that scans RSS feeds, estimates prices with LLMs, and flags real-time product deals end-to-end.",
+      "Externship (via Extern), Remote · Feb 2026 – Present. Python pipelines for pharmaceutical PDFs (PyMuPDF, pdfplumber); OCR benchmarking (Tesseract, PaddleOCR, EasyOCR); RAG with LlamaIndex, FAISS, and Chroma; LLM evaluation (Gemini, Mistral, Phi-2) and a Gradio chatbot for document Q&A.",
+    tech: "Python · PyMuPDF · OCR · LlamaIndex · FAISS · Chroma · Gradio",
+    detailForAI: `
+Pfizer Supply Chain — Document Processing Extern via Extern, Remote, Feb 2026–Present.
+Building Python pipelines to extract and structure data from pharmaceutical PDFs using PyMuPDF and pdfplumber, reducing manual document handling.
+Benchmarking OCR (Tesseract, PaddleOCR, EasyOCR) for labels and scanned documents across noisy inputs.
+Developing RAG flows with LlamaIndex, FAISS, and Chroma for semantic search over large document sets.
+Evaluating open-source LLMs (e.g., Gemini, Mistral, Phi-2) for document Q&A and shipping a Gradio chatbot for interactive querying.
+`
+  },
+  {
+    title: "Autonomous multi-agent bargain detection",
+    description:
+      "7-agent system on 100+ RSS feeds; RAG with ~400K embeddings (SentenceTransformer); MAE/RMSLE evaluation; deployed on Modal (~3s responses).",
     tech: "Python · LLMs · RAG · ChromaDB · Modal",
     detailForAI: `
-Designed and deployed a 7-agent autonomous system (planner, scanner, ensemble, messaging) that scans 100+ RSS feeds daily and uses LLM-based price estimation to identify real-time deals.
-Implemented a RAG pipeline over a ChromaDB vector store built on 400K+ product descriptions using SentenceTransformer embeddings and metadata like category and price.
-Evaluated the system on a labeled test set using MAE and RMSLE; added a reusable Tester class and 2D/3D t-SNE visualizations of the embedding space for diagnostics.
-Productionized the full pipeline on Modal with response times under ~3 seconds for most queries.
+Autonomous multi-agent bargain detection (resume): 7-agent system on 100+ RSS feeds; RAG with ~400K embeddings (SentenceTransformer); MAE/RMSLE evaluation; deployed on Modal (~3s responses).
 `
   },
   {
-    title: "Multi-Agent Trading with MCP",
+    title: "Multi-agent trading with MCP",
     description:
-      "A 4-agent autonomous trading platform where agents reason, research, and execute trades via MCP tools.",
+      "4-agent platform with MCP tools; Polygon.io, Brave Search, multiple LLMs; SQLite state and Gradio dashboard (~25–30 reasoning steps per cycle).",
     tech: "Python · AutoGen · SQLite · Gradio",
     detailForAI: `
-Built a 4-agent trading platform (Python 3.12, AutoGen) where each agent can run up to 30 reasoning turns per cycle before acting.
-Designed a modular MCP architecture with dedicated servers for accounts, market data, push notifications, and research so agents share a common protocol for portfolio operations and web search.
-Integrated Polygon.io for market data, Brave Search for research, and multiple LLM backends (OpenAI, DeepSeek, Gemini, Grok) for more robust agent behavior.
-Backed portfolio state, logs, and cached market data with SQLite, and exposed the whole system through a Gradio dashboard with real-time charts, holdings, and activity logs.
+Multi-agent trading with MCP (resume): 4-agent platform with MCP tools; Polygon.io, Brave Search, multiple LLMs; SQLite state and Gradio dashboard (~25–30 reasoning steps per cycle).
 `
   },
   {
-    title: "Document AI for Pharma Supply Chain",
+    title: "BCG GenAI financial chatbot (Forage)",
     description:
-      "Pipelines and RAG-powered tools to turn unstructured pharma PDFs into searchable, queryable knowledge.",
-    tech: "Python · OCR · RAG · LLMs",
+      "Structured 10-K/10-Q data and rule-based NLP for metrics and insights (June 2025 simulation).",
+    tech: "Python · Pandas · NLP · rules",
     detailForAI: `
-Built Python pipelines using PyMuPDF and pdfplumber to extract and structure content from pharmaceutical PDFs, reducing manual document processing effort.
-Benchmarked OCR systems (Tesseract, PaddleOCR, EasyOCR) to handle noisy labels and scanned documents.
-Prototyped RAG pipelines with LlamaIndex, FAISS, and Chroma so users can run semantic search and Q&A across large document repositories.
-Developed a Gradio-based chatbot that lets users upload documents and ask natural-language questions over the extracted content.
+BCG GenAI financial chatbot Forage (resume): Python, Pandas, NLP, rules — structured 10-K/10-Q data and rule-based NLP for metrics and insights; June 2025 simulation.
 `
   }
 ];
@@ -49,7 +53,7 @@ export default function ProjectsSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.25 }}
       transition={{ duration: 0.5 }}
-      className="grid gap-6 md:grid-cols-3"
+      className="grid gap-6 md:grid-cols-2"
     >
       {projects.map((project, index) => (
         <ProjectCard key={project.title} index={index} {...project} />
@@ -57,4 +61,3 @@ export default function ProjectsSection() {
     </motion.div>
   );
 }
-

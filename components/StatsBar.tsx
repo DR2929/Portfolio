@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export default function StatsBar() {
   const stats: { label: string; value: string }[] = [
-    { label: "Users served", value: "5M+" },
-    { label: "Countries", value: "6" },
-    { label: "Query time cut", value: "70%" },
-    { label: "MS GPA", value: "3.9" },
-    { label: "Embeddings built", value: "400K" }
+    { label: "Years experience (approx.)", value: "~3" },
+    { label: "M.S. GPA (Montclair State)", value: "3.9" },
+    { label: "Student records (datasets)", value: "25K+" },
+    { label: "Weekly pipeline records", value: "10K+" },
+    { label: "RAG embeddings (project)", value: "400K" }
   ];
 
   return (

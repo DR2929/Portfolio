@@ -72,4 +72,4 @@ pnpm build
 
 ### Contact
 
-Questions, collaborations, or opportunities? Reach out anytime on [LinkedIn](https://www.linkedin.com/in/deepikareddymadduri) or by email at [maddurideepikareddy@gmail.com](mailto:maddurideepikareddy@gmail.com).
+Questions, collaborations, or opportunities? Reach out anytime on [LinkedIn](https://www.linkedin.com/in/deepikareddymadduri) or by email at [deepikareddymadduris@gmail.com](mailto:deepikareddymadduris@gmail.com).
