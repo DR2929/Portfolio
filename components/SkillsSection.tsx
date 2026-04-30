@@ -9,66 +9,88 @@ type SkillGroup = {
 
 const groups: SkillGroup[] = [
   {
-    title: "Programming",
-    items: ["Python", "Java", "SQL", "JavaScript/TypeScript"]
+    title: "Programming & scripting",
+    items: ["Python", "Java", "SQL", "JavaScript"]
   },
   {
-    title: "ML & AI",
+    title: "Generative AI & LLMs",
     items: [
-      "Logistic Regression",
-      "XGBoost",
-      "BERT (Hugging Face)",
-      "ROC-AUC, F1, precision/recall",
-      "Threshold tuning",
-      "Feature engineering",
-      "SHAP",
-      "Drift (PSI)",
       "RAG",
       "LLM integration",
-      "NER",
-      "Intent classification"
+      "Prompt engineering & templates",
+      "Semantic retrieval & embeddings",
+      "AI guardrails & response validation",
+      "Structured JSON outputs",
+      "LLM evaluation & feedback loops",
+      "AI-assisted decision support",
+      "Multi-agent systems (AutoGen)"
     ]
   },
   {
-    title: "Data",
+    title: "Machine learning & NLP",
     items: [
-      "ETL",
-      "Validation",
-      "Schema evolution",
-      "Quality checks",
-      "Normalization",
-      "Backfill",
-      "Cohort analysis"
+      "Logistic regression & classification",
+      "Predictive modeling",
+      "Feature engineering & threshold tuning",
+      "Drift monitoring & PSI-based validation",
+      "NLP",
+      "Sentence Transformers & SBERT",
+      "OCR (Tesseract)",
+      "Rule-based systems"
     ]
   },
   {
-    title: "Backend & APIs",
-    items: ["Flask", "FastAPI", "Spring Boot", "REST", "Microservices"]
-  },
-  {
-    title: "Data & AI (documents)",
+    title: "Data engineering & analytics",
     items: [
-      "PyMuPDF",
-      "pdfplumber",
-      "Tesseract",
-      "PaddleOCR",
-      "EasyOCR",
-      "LlamaIndex",
-      "FAISS",
-      "Chroma"
+      "ETL pipelines",
+      "Data validation & quality checks",
+      "Schema evolution & backfill recovery",
+      "Data cleaning & transformation",
+      "Query-based reporting & KPI tracking",
+      "Ad hoc & trend analysis",
+      "Reporting automation"
     ]
   },
   {
-    title: "Databases",
-    items: ["PostgreSQL", "SQLAlchemy", "Indexing", "Query optimization"]
+    title: "Databases & storage",
+    items: ["PostgreSQL", "SQLite", "ChromaDB"]
   },
   {
-    title: "DevOps & quality",
-    items: ["Jenkins", "CI/CD", "JUnit", "Mockito", "JSON schema validation"]
+    title: "Backend & software engineering",
+    items: [
+      "RESTful APIs",
+      "Spring Boot",
+      "Microservices",
+      "API contracts",
+      "High-volume data processing",
+      "Production support & incident resolution",
+      "Performance optimization"
+    ]
   },
   {
-    title: "Frontend (as needed)",
-    items: ["React", "Next.js", "Tailwind", "Gradio"]
+    title: "BI & visualization",
+    items: [
+      "Power BI",
+      "Interactive dashboards",
+      "Data visualization",
+      "Performance & operational reporting"
+    ]
+  },
+  {
+    title: "Cloud, DevOps & tools",
+    items: ["Jenkins", "Kibana", "Modal", "Gradio", "Git", "Pandas", "JUnit", "Mockito"]
+  },
+  {
+    title: "Concepts & practices",
+    items: [
+      "Data modeling",
+      "Query optimization & indexing",
+      "Schema validation",
+      "Unit & integration testing",
+      "CI/CD",
+      "System reliability",
+      "Stakeholder & cross-functional collaboration"
+    ]
   }
 ];
 

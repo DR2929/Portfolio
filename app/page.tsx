@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Chat from "../components/Chat";
 import ProjectsSection from "../components/ProjectsSection";
 import ExperienceSection from "../components/ExperienceSection";
+import { getWorkExperienceForDisplay } from "../lib/workExperience";
 import SkillsSection from "../components/SkillsSection";
 import StatsBar from "../components/StatsBar";
 import ContactForm from "../components/ContactForm";
@@ -24,13 +25,31 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="section-title">About</h2>
             <p className="max-w-2xl text-sm text-gray-300">
-              AI software engineer with about three years building data pipelines,
-              ML models, and production backends in Python, SQL, and Java. Recent
-              focus on document AI, RAG, and agentic systems for pharma supply
-              chain and fintech. Strong background in ETL, validation, REST APIs,
-              NLP (including BERT / Hugging Face), and classical ML (logistic
-              regression, XGBoost), with experience improving data quality, model
-              performance, and reliability on moderate-scale datasets.
+              AI-enabled data and software professional with experience across
+              generative AI workflows, data analytics, backend engineering, and
+              applied machine learning. I&apos;ve built and supported RAG-based
+              systems, LLM-integrated decision-support workflows, semantic
+              retrieval pipelines, predictive models, and analytics dashboards
+              using Python, SQL, Power BI, PostgreSQL, and modern AI tooling.
+            </p>
+            <p className="max-w-2xl text-sm text-gray-300">
+              Hands-on experience in data validation, ETL, reporting
+              automation, API development, and production support, with a track
+              record of improving data reliability, retrieval effectiveness,
+              system performance, and operational decision-making. MS in Computer
+              Science from Montclair State University (GPA 3.9); BTech in
+              Electronics &amp; Communication Engineering from Bharath
+              Institute of Engineering and Technology, India.
+            </p>
+            <p className="max-w-2xl text-sm text-gray-300">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-amber-300/90">
+                Coursework &amp; academic projects
+              </span>
+              <br />
+              Software Engineering, Algorithms &amp; Data Structures, Operating
+              Systems, Machine Learning, Computer Architecture. Projects include
+              multi-agent AI systems (LLMs, RAG), an ML-based attendance system,
+              and Android/mobile applications.
             </p>
           </RevealOnScroll>
         </section>
@@ -71,7 +90,7 @@ export default function HomePage() {
               Where I&apos;ve <em>built</em>
             </h2>
           </div>
-          <ExperienceSection />
+          <ExperienceSection companies={getWorkExperienceForDisplay()} />
         </section>
 
         <section className="section space-y-8" id="ai-agent">
@@ -93,8 +112,8 @@ export default function HomePage() {
             Let&apos;s build something <em>real</em>
           </h2>
           <p className="mx-auto max-w-xl text-sm text-gray-300">
-            Open to AI/ML and backend-heavy roles in the New York metro area
-            (Jersey City, NJ).
+            Open to AI/ML, data engineering, and backend roles in the NYC metro
+            area (Jersey City / remote-friendly).
           </p>
           <ContactForm />
         </section>

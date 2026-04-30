@@ -31,7 +31,7 @@ export default function Header() {
                 Deepika Reddy Madduri
               </p>
               <p className="font-mono text-[10px] text-gray-400">
-                AI Software Engineer · Jersey City, NJ
+                AI & data · Jersey City, NJ
               </p>
             </div>
           </div>

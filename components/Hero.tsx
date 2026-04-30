@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const TERMINAL_LINES = [
-  "deepika@nyc:~$ whoami",
-  "AI software engineer — data pipelines, ML, production backends;",
-  "document AI, RAG, and agentic systems (pharma & fintech)."
+  "deepika@jersey-city:~$ whoami",
+  "AI-enabled data & software — RAG, LLMs, analytics,",
+  "and backend systems that hold up in production."
 ];
 
 export default function Hero() {
@@ -93,12 +93,40 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="max-w-xl text-sm text-gray-300 sm:text-base"
         >
-          I&apos;m Deepika Reddy Madduri, an AI software engineer based in Jersey
-          City, NJ (NYC area). I have about three years building data pipelines,
-          ML models, and production backends in Python, SQL, and Java — lately
-          focused on document AI, RAG, and agentic systems for pharma supply
-          chain and fintech.
+          AI-enabled data and software professional based in Jersey City, NJ. I
+          build RAG and LLM workflows, analytics pipelines, predictive models,
+          and backends in Python, SQL, and modern AI tooling—where data quality,
+          retrieval, and production constraints meet.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.18 }}
+          className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-gray-400"
+        >
+          <a
+            href="mailto:maddurideepikareddy@gmail.com"
+            className="text-amber-200/90 underline-offset-2 hover:text-amber-100 hover:underline"
+          >
+            maddurideepikareddy@gmail.com
+          </a>
+          <a
+            href="tel:+15518041582"
+            className="text-amber-200/90 underline-offset-2 hover:text-amber-100 hover:underline"
+          >
+            551-804-1582
+          </a>
+          <a
+            href="https://www.linkedin.com/in/deepikareddymadduri"
+            target="_blank"
+            rel="noreferrer"
+            className="text-amber-200/90 underline-offset-2 hover:text-amber-100 hover:underline"
+          >
+            LinkedIn
+          </a>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -123,11 +151,11 @@ export default function Hero() {
 
         <div className="flex flex-wrap gap-2 text-[11px] text-gray-400">
           {[
-            "Python · SQL · Java",
-            "ETL & validation",
-            "RAG & LLMs",
-            "Flask · Spring Boot",
-            "Jenkins · CI/CD"
+            "Generative AI & RAG",
+            "Data engineering & analytics",
+            "ML & NLP",
+            "Backend & APIs",
+            "BI & reporting automation"
           ].map((pill) => (
             <span
               key={pill}
@@ -160,12 +188,16 @@ export default function Hero() {
             </div>
             <div className="space-y-1 text-[11px] leading-snug">
               <p>
-                Pipelines, ML models, and production backends — ETL, validation,
-                and APIs that hold up when the data doesn&apos;t.
+                Validation, ETL, retrieval, and guardrails—so models and
+                dashboards stay grounded when stakes are high.
+              </p>
+              <p className="text-amber-200/80">
+                MS CS @ Montclair State (3.9); ex–Accenture & Infor backend work
+                at real scale.
               </p>
             </div>
             <div className="flex items-center justify-between text-[10px] text-amber-300/80">
-              <span className="font-mono">stack: Python · SQL · Java · LLMs</span>
+              <span className="font-mono">stack: Python · SQL · LLMs · PostgreSQL</span>
               <span className="font-mono">{`cat > ideas.txt`}</span>
             </div>
           </div>

@@ -1,50 +1,47 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const TO_EMAIL =
-  process.env.CONTACT_TO_EMAIL || "maddurideepikareddy@gmail.com";
+type ContactBody = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
+const toEmail = process.env.CONTACT_TO_EMAIL || "maddurideepikareddy@gmail.com";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = (await req.json()) as {
-      name?: string;
-      email?: string;
-      message?: string;
-    };
-
-    if (!message || !message.trim()) {
-      return NextResponse.json(
-        { error: "Message is required." },
-        { status: 400 }
-      );
-    }
-
     if (!process.env.RESEND_API_KEY) {
       return NextResponse.json(
-        { error: "Email service is not configured." },
+        { error: "RESEND_API_KEY is not configured." },
         { status: 500 }
       );
     }
 
+    const { name, email, message } = (await req.json()) as ContactBody;
+
+    if (!name?.trim() || !email?.trim() || !message?.trim()) {
+      return NextResponse.json(
+        { error: "Name, email, and message are required." },
+        { status: 400 }
+      );
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
+    const fromEmail = process.env.CONTACT_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
 
-    const fromName = name?.trim() || "Portfolio visitor";
-    const replyTo = email?.trim() || undefined;
-
-    const result = await resend.emails.send({
-      // IMPORTANT: use a verified sender from your Resend dashboard here
-      from: "Deepika from Portfolio <onboarding@resend.dev>",
-      to: [TO_EMAIL],
-      replyTo: replyTo,
-      subject: `Portfolio contact from ${fromName}`,
-      text: `Name: ${fromName}\nEmail: ${email || "N/A"}\n\nMessage:\n${message}`,
+    const { error } = await resend.emails.send({
+      from: fromEmail,
+      to: [toEmail],
+      replyTo: email.trim(),
+      subject: `Portfolio contact from ${name.trim()}`,
+      text: `Name: ${name.trim()}\nEmail: ${email.trim()}\n\nMessage:\n${message.trim()}`
     });
 
-    if ("error" in result && result.error) {
-      console.error("Resend error", result.error);
+    if (error) {
       return NextResponse.json(
-        { error: "Email provider rejected the request." },
-        { status: 502 }
+        { error: "Failed to send email." },
+        { status: 500 }
       );
     }
 
@@ -57,4 +54,3 @@ export async function POST(req: Request) {
     );
   }
 }
-

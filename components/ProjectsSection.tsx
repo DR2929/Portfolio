@@ -5,43 +5,40 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Pfizer Supply Chain — Document Processing Extern",
+    title: "Pfizer Supply Chain Document Processing",
     description:
-      "Externship (via Extern), Remote · Feb 2026 – Present. Python pipelines for pharmaceutical PDFs (PyMuPDF, pdfplumber); OCR benchmarking (Tesseract, PaddleOCR, EasyOCR); RAG with LlamaIndex, FAISS, and Chroma; LLM evaluation (Gemini, Mistral, Phi-2) and a Gradio chatbot for document Q&A.",
-    tech: "Python · PyMuPDF · OCR · LlamaIndex · FAISS · Chroma · Gradio",
+      "RAG, OCR benchmarking, and LLM evaluation over pharmaceutical PDFs—externship project with a Gradio document chat UI.",
+    tech: "LlamaIndex · FAISS · ChromaDB · PyMuPDF · Gradio · Extern",
     detailForAI: `
-Pfizer Supply Chain — Document Processing Extern via Extern, Remote, Feb 2026–Present.
-Building Python pipelines to extract and structure data from pharmaceutical PDFs using PyMuPDF and pdfplumber, reducing manual document handling.
-Benchmarking OCR (Tesseract, PaddleOCR, EasyOCR) for labels and scanned documents across noisy inputs.
-Developing RAG flows with LlamaIndex, FAISS, and Chroma for semantic search over large document sets.
-Evaluating open-source LLMs (e.g., Gemini, Mistral, Phi-2) for document Q&A and shipping a Gradio chatbot for interactive querying.
+Designed and deployed RAG pipelines using LlamaIndex, FAISS, and ChromaDB to enable semantic search across pharmaceutical document repositories, reducing manual document retrieval effort for supply chain workflows.
+Benchmarked OCR engines (Tesseract, PaddleOCR, EasyOCR) against low-quality scanned pharmaceutical labels, identifying optimal extraction configurations and improving character-level accuracy across degraded image inputs.
+Evaluated open-source LLMs (Gemini, Mistral, Phi-2) for document Q&A accuracy on pharmaceutical use cases, comparing retrieval grounding quality, hallucination rates, and response consistency to identify production-viable models.
+Built Python extraction pipelines using PyMuPDF and pdfplumber to parse and structure data from complex pharmaceutical PDFs, feeding clean outputs into downstream RAG and LLM workflows.
+Deployed a Gradio-based document chat interface supporting real-time PDF upload and intelligent content querying, enabling non-technical end users to interrogate large document repositories through natural language.
 `
   },
   {
-    title: "Autonomous multi-agent bargain detection",
+    title: "Multi-Agent Trading Platform with MCP",
     description:
-      "7-agent system on 100+ RSS feeds; RAG with ~400K embeddings (SentenceTransformer); MAE/RMSLE evaluation; deployed on Modal (~3s responses).",
-    tech: "Python · LLMs · RAG · ChromaDB · Modal",
+      "Four-agent trading simulation with AutoGen, market data, web search, SQLite portfolio state, and a Gradio monitoring dashboard.",
+    tech: "Python · AutoGen · LLM integration · SQLite · Gradio",
     detailForAI: `
-Autonomous multi-agent bargain detection (resume): 7-agent system on 100+ RSS feeds; RAG with ~400K embeddings (SentenceTransformer); MAE/RMSLE evaluation; deployed on Modal (~3s responses).
+Built a 4-agent trading simulation platform in Python using AutoGen, where agents executed ~25–30 reasoning steps per cycle to support investment decision-making.
+Developed a modular service layer integrating market data from Polygon.io, web search via Brave API, and multiple LLMs including OpenAI and Gemini for signal generation and analysis.
+Implemented portfolio tracking for holdings, transactions, and P&L with SQLite persistence, and stabilized concurrent update issues through controlled execution flow.
+Created a Gradio dashboard to monitor portfolio performance, transaction activity, and agent reasoning workflows, with average system latency of ~2–3 seconds per cycle.
 `
   },
   {
-    title: "Multi-agent trading with MCP",
+    title: "Autonomous Deal Detection System",
     description:
-      "4-agent platform with MCP tools; Polygon.io, Brave Search, multiple LLMs; SQLite state and Gradio dashboard (~25–30 reasoning steps per cycle).",
-    tech: "Python · AutoGen · SQLite · Gradio",
+      "Multi-agent pipeline over 100+ RSS feeds, ChromaDB retrieval at ~400K embeddings, and Modal deployment.",
+    tech: "RAG · ChromaDB · SentenceTransformers · LLMs · Modal",
     detailForAI: `
-Multi-agent trading with MCP (resume): 4-agent platform with MCP tools; Polygon.io, Brave Search, multiple LLMs; SQLite state and Gradio dashboard (~25–30 reasoning steps per cycle).
-`
-  },
-  {
-    title: "BCG GenAI financial chatbot (Forage)",
-    description:
-      "Structured 10-K/10-Q data and rule-based NLP for metrics and insights (June 2025 simulation).",
-    tech: "Python · Pandas · NLP · rules",
-    detailForAI: `
-BCG GenAI financial chatbot Forage (resume): Python, Pandas, NLP, rules — structured 10-K/10-Q data and rule-based NLP for metrics and insights; June 2025 simulation.
+Built a multi-agent deal detection pipeline that processed 100+ RSS feeds daily, combining rule-based filtering with LLM-based price estimation for product opportunity discovery.
+Designed a retrieval-augmented workflow using ChromaDB with ~400K embeddings generated through SentenceTransformers for similarity-based product pricing and matching.
+Evaluated model performance using MAE and RMSLE across ~250 test samples, improving prediction quality through iterative tuning and refinement.
+Deployed the system on Modal with an average response time of ~3 seconds, while improving data quality through preprocessing enhancements for noisy product inputs.
 `
   }
 ];
@@ -53,7 +50,7 @@ export default function ProjectsSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.25 }}
       transition={{ duration: 0.5 }}
-      className="grid gap-6 md:grid-cols-2"
+      className="grid gap-6 md:grid-cols-3"
     >
       {projects.map((project, index) => (
         <ProjectCard key={project.title} index={index} {...project} />
